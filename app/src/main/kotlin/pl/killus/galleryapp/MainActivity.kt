@@ -1,14 +1,17 @@
 package pl.killus.galleryapp
 
 import android.content.ContentResolver
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
+import android.view.View
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexWrap
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import pl.killus.galleryapp.databinding.ActivityMainBinding
 import pl.killus.galleryapp.ui.Image
 import pl.killus.galleryapp.ui.ImageAdapter
 import pl.killus.galleryapp.utils.BaseActivity
-import pl.killus.galleryapp.utils.SquareGridLayoutManager
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val b by lazy {ActivityMainBinding.inflate(layoutInflater)}
@@ -18,7 +21,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         val contentResolver: ContentResolver = applicationContext.contentResolver
         val imagePaths = fetchImagePaths(contentResolver)
-        b.recycler.layoutManager = SquareGridLayoutManager(this, 3)
+        b.recycler.layoutManager = FlexboxLayoutManager(this).apply {
+            flexDirection = FlexDirection.ROW
+            flexWrap = FlexWrap.WRAP
+            justifyContent = JustifyContent.CENTER
+        }
+
         b.recycler.adapter =
             ImageAdapter(imagePaths) {
 

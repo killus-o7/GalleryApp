@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.flexbox.FlexboxLayoutManager
 import pl.killus.galleryapp.R
 import pl.killus.galleryapp.databinding.ImageItemBinding
 
@@ -23,7 +24,11 @@ class ImageAdapter(
         fun bind(entry: Image, click: (Image) -> Unit) {
             b.apply {
                 Glide.with(image).load(entry.url).apply(options).into(image)
-                b.root.setOnClickListener { click(entry) }
+                root.setOnClickListener { click(entry) }
+                (root.layoutParams as FlexboxLayoutManager.LayoutParams).apply {
+                    //flexGrow = 1.0f
+                    flexBasisPercent = .3f
+                }
             }
         }
     }
