@@ -3,7 +3,6 @@ package pl.killus.galleryapp
 import android.content.ContentResolver
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
