@@ -1,5 +1,6 @@
 package pl.killus.galleryapp.ui
 
 data class Album (
-    val sex: Boolean
+    val id: String?,
+    val name: String
 )
