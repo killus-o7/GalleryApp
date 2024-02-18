@@ -8,7 +8,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.flexbox.FlexboxLayoutManager
 import pl.killus.galleryapp.R
 import pl.killus.galleryapp.databinding.AlbumItemBinding
-import pl.killus.galleryapp.databinding.ImageItemBinding
 
 class AlbumAdapter (
     private val data: List<Album> = listOf(),
@@ -24,12 +23,13 @@ class AlbumAdapter (
     class ViewHolder(private val b: AlbumItemBinding) : RecyclerView.ViewHolder(b.root) {
         fun bind(entry: Album, click: (Album) -> Unit) {
             b.apply {
-                //Glide.with(image).load(entry.name).apply(options).into(image)
+                Glide.with(image).load(entry.thumbnailPath).apply(options).into(image)
                 root.setOnClickListener { click(entry) }
                 text.text = entry.name
                 (root.layoutParams as FlexboxLayoutManager.LayoutParams).apply {
                     flexBasisPercent = .48f
                 }
+                text.setBackgroundColor(0xA0000000.toInt())
             }
         }
     }
@@ -38,6 +38,5 @@ class AlbumAdapter (
             .centerCrop()
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.ic_launcher_background)
-            .override(200, 200)
     }
 }

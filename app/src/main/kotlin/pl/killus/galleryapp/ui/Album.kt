@@ -1,6 +1,7 @@
 package pl.killus.galleryapp.ui
 
 data class Album (
-    val id: String?,
-    val name: String
+    val name: String,
+    val id: String? = null,
+    var thumbnailPath: String? = null
 )
