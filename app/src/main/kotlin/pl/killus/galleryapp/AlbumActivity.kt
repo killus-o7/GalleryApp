@@ -1,19 +1,12 @@
 package pl.killus.galleryapp
 
 import android.content.Intent
-import android.Manifest
-import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import androidx.activity.result.contract.ActivityResultContracts.*
-import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
 import com.google.android.flexbox.FlexDirection
 import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import com.google.android.flexbox.JustifyContent
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import pl.killus.galleryapp.databinding.ActivityAlbumBinding
 import pl.killus.galleryapp.ui.Album
 import pl.killus.galleryapp.ui.AlbumAdapter
