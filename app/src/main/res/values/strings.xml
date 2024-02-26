@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">GalleryApp</string>
     <string name="todo">TODO</string>
+
+    <string name="permissionDialogTitle">Przyznanie uprawnień aplikacji</string>
+    <string name="permissionDialogDesc">pls daj permisje, obiecuję nie ukradnę nic :c</string>
+    <string name="permissionDialogCancel">nah</string>
+    <string name="permissionDialogPositive">okok</string>
+
 </resources>

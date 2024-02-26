@@ -1,7 +1,8 @@
 package pl.killus.galleryapp.ui
 
-data class Image(
-    val url: String? = null,
-    val title: String? = null,
+data class Image (
+    val url: String,
+    val title: String,
+    val date: String,
     val isPlaceholder: Boolean = false
 )
